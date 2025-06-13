@@ -89,10 +89,12 @@ header {
 
 
 .mobile-nav a {
+  font-family: 'Big Shoulders Display', sans-serif;
   color: #F0F0F0;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 0.5;
   opacity: 0;
   transform: translateX(-10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -106,6 +108,8 @@ header {
 
 .mobile-nav a:hover {
   color: #E0F11F;
+  text-decoration: underline;
+  
 }
 
 .mobile-nav.open {
@@ -125,12 +129,26 @@ p {
   color: #808080;
   text-align: center;
   margin-top: 1rem;
-  margin-bottom: 3rem;
-  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  letter-spacing: 1.2px;
 }
 
 .tagline {
 	font-size: 0.6rem;
+}
+
+.introline {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: #F0F0F0;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.introline {
+	font-size: .70rem;
 }
 
 
@@ -194,6 +212,11 @@ p {
   .tagline {
     font-size: 0.8rem;
   }
+  
+  .introline {
+	font-size: .85rem;
+}
+
 
   .section-header {
     font-size: 2.1rem;
@@ -238,6 +261,9 @@ p {
   .section-header {
     font-size: 2.8rem;
   }
+  .introline {
+	font-size: 1rem;
+  }
 
   p {
     font-size: 1.3rem;
@@ -251,8 +277,8 @@ p {
   }
   .tagline {
     font-size: 1rem;
-	margin-top: 4rem;
-    margin-bottom: 4rem;
+	margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -265,6 +291,10 @@ p {
   .tagline {
     font-size: 1rem;
   }
+  .introline {
+	font-size: 1.25rem;
+}
+
   .subtitle {
   font-size: 2.5rem;
   }
@@ -287,6 +317,11 @@ p {
   .tagline {
     font-size: 1.2rem;
   }
+  
+  .introline {
+	font-size: 1.75rem;
+}
+
   .subtitle {
   font-size: 3rem;
   }
