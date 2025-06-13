@@ -455,6 +455,7 @@ section a:hover {
 /* Footer */
 footer {
   text-align: center;
+  pointer-events:none;
   padding: 40px;
   font-size: 0.9rem;
   opacity: 0.6;
