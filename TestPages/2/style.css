@@ -481,7 +481,7 @@ section.reveal {
 .gallery img {
   width: 100%;
   height: auto;
-  filter: grayscale(100%) contrast(1.2);
+  filter: grayscale(100%) contrast(1.25);
   transition: all 0.6s ease;
   transform: scale(1);
   border-radius: 8px;
