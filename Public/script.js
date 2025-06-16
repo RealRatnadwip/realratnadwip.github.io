@@ -82,3 +82,22 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Redirect countdown (for thanks.html)
+const countdownEl = document.getElementById("countdown");
+const redirectText = document.getElementById("redirect-text");
+
+if (countdownEl && redirectText) {
+  let seconds = 10;
+  countdownEl.textContent = seconds;
+  countdownEl.style.color = "#E0F11F"; // Highlight color
+
+  const countdown = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds.toString().padStart(2, "0");
+
+    if (seconds <= 0) {
+      clearInterval(countdown);
+      window.location.replace("./index.html"); // Adjust path if needed
+    }
+  }, 1000);
+}
