@@ -703,7 +703,7 @@ section a:hover {
 
 .image-collection {
   padding: 10rem;
-  max-width: 80%;
+  max-width: 75%;
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -715,6 +715,7 @@ section a:hover {
 .image-card {
   overflow: hidden;
   border-radius: 0.75rem;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -741,7 +742,7 @@ section a:hover {
   justify-content: center;
   align-items: center;
   padding: 0rem;
-  z-index: 9999;
+  z-index: 1001;
   animation: fadeIn 0.3s ease forwards;
 }
 
