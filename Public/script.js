@@ -119,17 +119,20 @@ document.querySelectorAll('.image-card').forEach(card => {
 
 closeBtn.addEventListener('click', () => {
   previewLayer.classList.add('hidden');
+  previewImg.classList.remove('zoomed');
 });
 
 previewLayer.addEventListener('click', (e) => {
   if (e.target === previewLayer) {
     previewLayer.classList.add('hidden');
+	previewImg.classList.remove('zoomed');
   }
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     previewLayer.classList.add('hidden');
+	previewImg.classList.remove('zoomed');
   }
 });
 
@@ -145,31 +148,3 @@ document.styleSheets[0].insertRule(`
     cursor: zoom-out;
   }
 `, document.styleSheets[0].cssRules.length);
-
-const hammer = new Hammer(previewImg);
-
-// Enable pinch and doubletap
-hammer.get('pinch').set({ enable: true });
-hammer.get('doubletap').set({ enable: true });
-hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
-
-let isZoomed = false;
-
-// Handle double tap to zoom
-hammer.on('doubletap', () => {
-  isZoomed = !isZoomed;
-  previewImg.classList.toggle('zoomed', isZoomed);
-});
-
-// Optional: pinch gesture zoom handling (basic toggle)
-hammer.on('pinchend', () => {
-  isZoomed = true;
-  previewImg.classList.add('zoomed');
-});
-
-// Swipe down to close preview
-hammer.on('swipedown', () => {
-  previewLayer.classList.add('hidden');
-  previewImg.classList.remove('zoomed');
-  isZoomed = false;
-});
