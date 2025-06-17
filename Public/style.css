@@ -689,9 +689,6 @@ section.reveal {
   box-shadow: 0 2px 6px rgba(224, 241, 31, 0.4);
 }
 
-
-
-
 /* Highlight all links inside sections */
 section a {
   color: #E0F11F;
@@ -702,6 +699,113 @@ section a {
 section a:hover {
   text-decoration: underline;
 }
+
+
+.image-collection {
+  padding: 10rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Preview overlay */
+.preview-layer {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.preview-box {
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+  animation: scaleUp 0.3s ease;
+}
+
+.preview-box img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 0.75rem;
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+
+.preview-img.zoomed {
+  transform: scale(1.3);
+  cursor: zoom-out;
+  transition: transform 0.3s ease;
+}
+
+
+.caption-text {
+  margin-top: 0.5rem;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  color: #E0F11F;
+  font-size: 1rem;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  right: 0;
+  float: right;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
 
 
 /* Footer */

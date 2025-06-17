@@ -101,3 +101,75 @@ if (countdownEl && redirectText) {
     }
   }, 1000);
 }
+
+
+const previewLayer = document.querySelector('.preview-layer');
+const previewImg = document.querySelector('.preview-img');
+const captionText = document.querySelector('.caption-text');
+const closeBtn = document.querySelector('.close-btn');
+
+document.querySelectorAll('.image-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const img = card.querySelector('img');
+    previewImg.src = img.src;
+    captionText.textContent = card.getAttribute('data-caption') || '';
+    previewLayer.classList.remove('hidden');
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  previewLayer.classList.add('hidden');
+});
+
+previewLayer.addEventListener('click', (e) => {
+  if (e.target === previewLayer) {
+    previewLayer.classList.add('hidden');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    previewLayer.classList.add('hidden');
+  }
+});
+
+previewImg.addEventListener('click', (e) => {
+  e.stopPropagation();
+  previewImg.classList.toggle('zoomed');
+});
+
+// Optional zoom effect on click
+document.styleSheets[0].insertRule(`
+  .preview-img.zoomed {
+    transform: scale(1.3);
+    cursor: zoom-out;
+  }
+`, document.styleSheets[0].cssRules.length);
+
+const hammer = new Hammer(previewImg);
+
+// Enable pinch and doubletap
+hammer.get('pinch').set({ enable: true });
+hammer.get('doubletap').set({ enable: true });
+hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+let isZoomed = false;
+
+// Handle double tap to zoom
+hammer.on('doubletap', () => {
+  isZoomed = !isZoomed;
+  previewImg.classList.toggle('zoomed', isZoomed);
+});
+
+// Optional: pinch gesture zoom handling (basic toggle)
+hammer.on('pinchend', () => {
+  isZoomed = true;
+  previewImg.classList.add('zoomed');
+});
+
+// Swipe down to close preview
+hammer.on('swipedown', () => {
+  previewLayer.classList.add('hidden');
+  previewImg.classList.remove('zoomed');
+  isZoomed = false;
+});

@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealRatnadwip - Projects</title>
+  <title>RealRatnadwip - Blank</title>
   <link rel="icon" href="./Media/Logo/128x128icon.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
@@ -40,34 +40,30 @@
 <!-- Inside <body> -->
 <div class="name" id="home">
   <div class="line1">
-    <span style="--i:1">P</span><span style="--i:2">R</span><span style="--i:3">O</span><span style="--i:4">J</span><span style="--i:5">E</span><span style="--i:6">C</span><span style="--i:7">T</span><span style="--i:8">S</span>
+    <span style="--i:1">B</span><span style="--i:2">L</span><span style="--i:3">A</span><span style="--i:4">N</span><span style="--i:5">K</span>
   </div>
 </div> 
-<br>
 
-<section id="work">
-  <div class="gallery">
-  <a href="./projects3D.html" class="gallery-item">
-    <img src="./Media/blend3d.jpg" alt="3D VFX Art">
-    <span class="overlay-text">BLENDER 3D</span>
-  </a>
-  <a href="./projectsPS.html" class="gallery-item">
-    <img src="./Media/pshop.jpg" alt="Photo Editing">
-    <span class="overlay-text">PHOTOSHOP</span>
-  </a>
-  <a href="./projectsCODE.html" class="gallery-item">
-    <img src="./Media/ds.jpg" alt="Programming">
-    <span class="overlay-text">PROGRAMMING</span>
-  </a>
-  <a href="./projectsPR.html" class="gallery-item">
-    <img src="./Media/ytb.jpg" alt="Video Editing">
-    <span class="overlay-text">PREMIRE PRO</span>
-  </a>
-</div>
-</section>
+<div class="image-collection">
+    <!-- Example items -->
+    <div class="image-card" data-caption="Beautiful Mountain"><img  src="./Media/blend3d.jpg"   alt="Mountain"></div>
+    <div class="image-card" data-caption="Serene Lake"><img         src="./Media/ds.jpg"        alt="Lake"></div>
+    <div class="image-card" data-caption="City Lights"><img         src="./Media/pshop.jpg"     alt="City"></div>
+    <div class="image-card" data-caption="Golden Desert"><img       src="./Media/ytb.jpg"       alt="Desert"></div>
+    <!-- Add more images as needed -->
+  </div>
+
+  <div class="preview-layer hidden">
+    <div class="preview-box">
+      <button class="close-btn" title="Close">&times;</button>
+      <img class="preview-img" src="" alt="Preview" />
+      <p class="caption-text"></p>
+    </div>
+  </div>
 
 
-  <footer>
+
+ <footer>
   <div class="social-icons">
   <a href="https://x.com/useridwas_taken" class="social-btn twitter" target="_blank" aria-label="X (Twitter)">
     <i class="fab fa-x-twitter"></i>
@@ -108,7 +104,8 @@
 	<div id="liveClock" class="clock"></div>
 </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <script src="script.js"></script>
 
-  <script src="./script.js"></script>
 </body>
 </html>
