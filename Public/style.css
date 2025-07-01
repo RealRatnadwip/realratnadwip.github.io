@@ -763,6 +763,7 @@ section a:hover {
 }
 
 .preview-box {
+  padding-top: 3rem;
   max-width: 90vw;
   max-height: 90vh;
   text-align: center;
