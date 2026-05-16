@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Variables (Centralized Website Styling)
+   ========================================================================== */
+:root {
+  /* Background Colors */
+  --bg-primary: #121212;
+  --bg-primary-rgb: 18, 18, 18;
+  --bg-secondary: #1e1e1e;
+
+  /* Accent Colors */
+  --accent-primary: #E0F11F;
+  --accent-primary-rgb: 224, 241, 31;
+  --accent-hover: #d7e214;
+
+  /* Text Colors */
+  --text-primary: #F0F0F0;
+  --text-muted: #808080;
+
+  /* Border Colors */
+  --border-color: #282828;
+  --border-light: #444;
+  --border-focus: #777;
+
+  /* Typography */
+  --font-primary: 'DM Sans', sans-serif;
+  --font-heading: 'Big Shoulders Display', sans-serif;
+}
+
+/* =========================================
+   Base / General Styles
+   ========================================= */
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  scroll-behavior: smooth;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden; /* Disable scrolling */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Edge */
+}
+
+p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* Animated Name */
+.name {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  color: var(--accent-primary);
+  text-align: center;
+  margin-top: 30px;
+  line-height: 1.2;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* Base size for smallest screens */
+.name {
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+}
+
+/* 400px and up */
+@media (min-width: 400px) {
+  .name {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+
+/* 500px and up */
+@media (min-width: 500px) {
+  .name {
+    font-size: 6rem;
+  }
+}
+
+/* 600px and up */
+@media (min-width: 600px) {
+  .name {
+    font-size: 7rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 700px and up */
+@media (min-width: 700px) {
+  .name {
+    font-size: 8rem;
+  }
+}
+
+/* 800px and up */
+@media (min-width: 800px) {
+  .name {
+    font-size: 10rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+/* 1000px and up */
+@media (min-width: 1000px) {
+  .name {
+    font-size: 12rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+/* 1200px and up */
+@media (min-width: 1200px) {
+  .name {
+    font-size: 14rem;
+  }
+}
+
+/* 1400px and up */
+@media (min-width: 1400px) {
+  .name {
+    font-size: 16rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+/* 2000px and up */
+@media (min-width: 2000px) {
+  .name {
+    font-size: 18rem;
+  }
+
+  .subtitle {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.name .line1 span,
+.name .line2 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.name .line1 span {
+  animation-delay: calc(0.05s * var(--i));
+}
+
+.name .line2 span {
+  animation-delay: calc(0.05s * (var(--i) + 8));
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Sections & Layout
+   ========================================= */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 40px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtitle */
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* Highlight all links inside sections */
+section a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
